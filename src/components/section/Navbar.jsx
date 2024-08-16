@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <div
       ref={navRef}
-      className={`fixed top-0 ${theme} left-0 z-30 flex items-center justify-between w-full h-24 px-6 text-mainColor`}
+      className={`fixed top-0 ${theme} left-0 z-30 flex items-center justify-between w-full h-24 px-6 text-mainColor bg-secondColor`}
     >
       <div>
         <AnimatedLink href="/">
