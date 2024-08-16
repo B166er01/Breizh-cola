@@ -16,13 +16,14 @@ const page = ({ params }) => {
       <ThemeChanger />
       <AnimateOut />
       <div
-        className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500 min-h-[3500px] w-full h-screen`}
+        className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500 min-h-[200vh] w-full`}
       >
-        <div id="single" className="w-full min-h-[150vh] ">
+        <div id="single" className="w-full min-h-[200vh] ">
           <ProductTitle name={params.slug} />
           <BreizhOriginal />
-          <div className="w-full min-h-screen ">text</div>
         </div>
+
+        <Screen />
       </div>
     </>
   );
