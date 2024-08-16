@@ -7,10 +7,26 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        RussoOne: ["RussoOne", "sans-serif"],
+      },
+      textColor: {
+        skin: {
+          base: "var(--textColor)",
+          secondary: "var(--backgroundColor)",
+        },
+      },
+      backgroundColor: {
+        skin: {
+          fill: "var(--backgroundColor)",
+          secondary: "var(--textColor)",
+        },
+      },
+      borderColor: {
+        skin: {
+          border: "var(--textColor)",
+          secondary: "var(--backgroundColor)",
+        },
       },
     },
   },
