@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useTheme } from "./ThemeProvider";
+import { useEffect } from "react";
+import { useTheme } from "../components/ThemeProvider";
 
 const ThemeChanger = () => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
-  // Toggle theme on scroll position
   useEffect(() => {
     function handleScroll() {
       const scrollPositionY = window.scrollY;
