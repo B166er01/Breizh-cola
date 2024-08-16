@@ -4,6 +4,9 @@
 import ThemeChanger from "@/components/ThemeChanger";
 import { useTheme } from "../components/ThemeProvider";
 import AnimateOut from "@/components/AnimateOut";
+import Screen from "@/components/section/Screen";
+import ProductOriginal2 from "@/components/section/ProductOriginal2";
+import ProductOriginal from "@/components/section/ProductOriginal";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -18,6 +21,8 @@ export default function Home() {
         <div className="uppercase w-full h-screen  flex flex-col items-center justify-center text-8xl ">
           home
         </div>
+        <Screen />
+        <ProductOriginal2 />
       </main>
     </>
   );

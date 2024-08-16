@@ -10,7 +10,7 @@ const ThemeChanger = () => {
     function handleScroll() {
       const scrollPositionY = window.scrollY;
 
-      if (scrollPositionY > 2700) {
+      if (scrollPositionY > 2000) {
         setTheme("theme-reverse");
       } else {
         setTheme("");
