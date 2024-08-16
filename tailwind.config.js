@@ -8,25 +8,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        RussoOne: ["RussoOne", "sans-serif"],
+        creamCake: ["CreamCake", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
-      textColor: {
-        skin: {
-          base: "var(--textColor)",
-          secondary: "var(--backgroundColor)",
-        },
-      },
-      backgroundColor: {
-        skin: {
-          fill: "var(--backgroundColor)",
-          secondary: "var(--textColor)",
-        },
-      },
-      borderColor: {
-        skin: {
-          border: "var(--textColor)",
-          secondary: "var(--backgroundColor)",
-        },
+      colors: {
+        mainColor: "var(--mainColor)",
+        secondColor: "var(--secondColor)",
       },
     },
   },

@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "../components/ThemeProvider";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
+import Navbar from "@/components/section/Navbar";
+import Footer from "@/components/section/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <SmoothScrolling>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </SmoothScrolling>
       </body>
     </html>

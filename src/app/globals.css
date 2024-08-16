@@ -2,15 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'creamCake';
+  src: url('/font/Cream\ Cake.otf');
+}
+@font-face {
+  font-family: 'poppins';
+  src: url('/font/poppins-extrabold.ttf');
+}
+
 @layer base {
   :root {
-    --textColor: #fef2f2;
-    --backgroundColor: #450a0a;
+    --mainColor: #fef2f2;
+    --secondColor: #450a0a;
   }
-
   .theme-reverse {
-    --textColor: #450a0a;
-    --backgroundColor: #fef2f2;
+    --mainColor: #450a0a;
+    --secondColor: #fef2f2;
   }
 }
 
