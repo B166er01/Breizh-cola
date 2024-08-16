@@ -5,7 +5,6 @@ import ThemeChanger from "@/components/ThemeChanger";
 import { useTheme } from "../components/ThemeProvider";
 import AnimateOut from "@/components/AnimateOut";
 import Screen from "@/components/section/Screen";
-import ProductOriginal2 from "@/components/section/ProductOriginal2";
 import ProductOriginal from "@/components/section/ProductOriginal";
 
 export default function Home() {
@@ -22,7 +21,7 @@ export default function Home() {
           home
         </div>
         <Screen />
-        <ProductOriginal2 />
+        <ProductOriginal />
       </main>
     </>
   );

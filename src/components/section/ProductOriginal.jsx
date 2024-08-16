@@ -50,33 +50,28 @@ const ProductOriginal = () => {
       )
       .to(buttonRef.current, { scale: 1, ease: "back.out", delay: 1.1 }, "one");
   });
-
   return (
-    <div
-      id="blue"
-      className="relative w-full h-screen bg-secondColor transition-colors duration-500 "
-      ref={screenRef}
-    >
+    <div id="blue" className="relative w-full h-screen " ref={screenRef}>
       <BreizhCola />
       <div
         className="relative scale-0 w-[440px] h-[220px] top-[50vh] left-1/2 "
         ref={buttonRef}
       >
         <MagneticButtons>
-          <button className="  -rotate-6 border-mainColor h-[220px] text-6xl uppercase rounded-[50%] cursor-pointer w-[440px] bg-secondColor border  font-bold text-secondCColor hover:text-secondColor hover:bg-mainColor  transition duration-500 ">
+          <button className="  -rotate-6 border-mainColor h-[220px] text-6xl uppercase rounded-[50%] cursor-pointer w-[440px]  border  font-bold hover:text-secondColor hover:bg-mainColor  ">
             <AnimatedLink href={"/product/original"}>decouvrez le</AnimatedLink>
           </button>
         </MagneticButtons>
       </div>
 
-      <div className="flex flex-col gap-6 ml-20 uppercase font-poppins text-8xl text-secondCColor  ">
+      <div className="flex flex-col gap-6 ml-20 uppercase font-poppins text-8xl  ">
         <p className="flex gap-8 overflow-hidden">
           <span ref={ref1} className="translate-y-full">
             la recette
           </span>
           <span
             ref={ref2}
-            className="overflow-hidden translate-y-full text-secondColor text-stroke text-stroke-mainColor transition-colors duration-500"
+            className="overflow-hidden translate-y-full  text-stroke text-stroke-mainColor text-secondColor transition-colors duration-500 "
           >
             originale
           </span>
@@ -84,7 +79,7 @@ const ProductOriginal = () => {
         <p className="flex gap-8 overflow-hidden">
           <span
             ref={ref3}
-            className="translate-y-full text-secondColor text-stroke text-stroke-mainColor transition-colors duration-500"
+            className="translate-y-full text-stroke text-stroke-mainColor text-secondColor transition-colors duration-500 "
           >
             Son
           </span>
@@ -98,7 +93,7 @@ const ProductOriginal = () => {
           </span>
           <span
             ref={ref6}
-            className="translate-y-full text-secondColor text-stroke text-stroke-mainColor "
+            className="translate-y-full text-stroke text-stroke-mainColor text-secondColor transition-colors duration-500 "
           >
             parfait
           </span>
