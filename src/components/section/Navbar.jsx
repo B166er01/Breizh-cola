@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useTheme } from "../ThemeProvider";
+import AnimatedLink from "../AnimatedLink";
 
 const Navbar = () => {
   const navRef = useRef(null);
@@ -35,22 +36,22 @@ const Navbar = () => {
       className={`fixed top-0 ${theme} left-0 z-30 flex items-center justify-between w-full h-24 px-6 text-mainColor`}
     >
       <div>
-        <div href="/">
+        <AnimatedLink href="/">
           {" "}
           <span className="text-6xl capitalize font-creamCake">
             breizh cola
           </span>
-        </div>
+        </AnimatedLink>
       </div>
 
       <ul className="flex items-center justify-center gap-8 text-2xl capitalize">
         <li>
           {" "}
-          <div href="/product/zero">products</div>
+          <AnimatedLink href="/product/zero">products</AnimatedLink>
         </li>
         <li>
           {" "}
-          <div href="/">home</div>
+          <AnimatedLink href="/">home</AnimatedLink>
         </li>
       </ul>
     </div>

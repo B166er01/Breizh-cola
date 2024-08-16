@@ -13,7 +13,7 @@ const AnimateOut = () => {
     });
   }, []);
 
-  return <div>AnimateOut</div>;
+  return <></>;
 };
 
 export default AnimateOut;

@@ -3,10 +3,12 @@ import gsap from "gsap";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import { useTheme } from "./ThemeProvider";
 
 const AnimatedLink = ({ href, children }) => {
   const router = useRouter();
   const pathname = usePathname(); // Get the current path
+  const { setTheme } = useTheme();
 
   const animate = () => {
     // Prevent the animation and navigation if the target is the current page
@@ -16,6 +18,7 @@ const AnimatedLink = ({ href, children }) => {
 
     let TL = gsap.timeline({
       onComplete: () => {
+        setTheme("");
         router.push(href);
       },
     });
@@ -24,18 +27,6 @@ const AnimatedLink = ({ href, children }) => {
       top: "0",
       duration: 0.44, // Adjust the duration as needed
       stagger: 0.12,
-      // onComplete: () => {
-      //   // Optional: Reverse the animation after navigation
-      //   gsap.to(
-      //     ["#transition", "#transition2", "#transition3", "#transition4"],
-      //     {
-      //       top: "-100%",
-      //       duration: 0.54, // Adjust the duration as needed
-      //       delay: 0.22,
-      //       stagger: 0.15,
-      //     }
-      //   );
-      // },
     });
   };
 

@@ -3,6 +3,7 @@
 // import Footer from "@/components/Footer";
 import ThemeChanger from "@/components/ThemeChanger";
 import { useTheme } from "../components/ThemeProvider";
+import AnimateOut from "@/components/AnimateOut";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <ThemeChanger />
+      <AnimateOut />
       <main
         className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500 min-h-[3500px]`}
       >
