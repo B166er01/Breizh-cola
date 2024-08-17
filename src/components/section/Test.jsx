@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,17 +37,20 @@ const Test = () => {
       "one"
     );
 
+    // Combine text and image animations into a single timeline
+    const combinedAnim = gsap.timeline().add(anim, "start"); // Start both animations together
+
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
       end: "bottom top",
       scrub: true,
-      markers: true,
+      //markers: true,
       pin: true,
-      animation: anim,
+      animation: combinedAnim,
       onLeave: (self) => {
         self.kill(true);
-        anim.progress(1);
+        combinedAnim.progress(1);
       },
     });
 
@@ -61,7 +65,7 @@ const Test = () => {
     <div className="p-5">
       <div
         ref={containerRef}
-        className="flex overflow-hidden flex-col relative w-full h-screen text-5xl leading-tight uppercase bg-myWhite text-myRed font-poppins pt-[20vh]"
+        className="flex flex-col relative  w-full h-screen text-5xl leading-tight uppercase  text-mainColor font-poppins pt-[20vh]"
       >
         <div className="text-center">
           <div ref={paragrapheRef} className="w-1/2 mx-auto">
