@@ -1,4 +1,5 @@
 "use client";
+
 import gsap from "gsap";
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -25,7 +26,7 @@ const AnimatedLink = ({ href, children }) => {
 
     TL.to(["#transition0", "#transition1", "#transition2", "#transition3"], {
       top: "0",
-      duration: 0.44, // Adjust the duration as needed
+      duration: 0.44,
       stagger: 0.12,
     });
   };

@@ -1,10 +1,9 @@
 "use client";
 import { useGSAP } from "@gsap/react";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductTitle = ({ name }) => {
@@ -18,21 +17,20 @@ const ProductTitle = ({ name }) => {
   const subRef = useRef(null);
 
   useGSAP(() => {
-    // GSAP animation setup
     const refs = [ref1, ref2, ref3, ref4, ref5];
-    const translateYValues = ["100%", "200%", "300%", "400%", "500%"]; // Different translateY values
+    const translateYValues = ["100%", "200%", "300%", "400%", "500%"];
 
     refs.forEach((ref, index) => {
       gsap.to(ref.current, {
-        translateY: translateYValues[index], // Apply different translateY values
+        translateY: translateYValues[index],
         duration: 0.5,
         ease: "back.out(2)",
         scrollTrigger: {
-          trigger: "#single", // Element that triggers the animation
-          start: "top top", // Start when the top of the trigger hits the top of the viewport
-          end: "bottom 99%", // End position for the scroll trigger
-          // markers: true, // Show markers for debuggin
-          // scrub: 0.9, // Enable reverse on scroll
+          trigger: "#single",
+          start: "top top",
+          end: "bottom 99%",
+          // markers: true,
+          // scrub: 0.9,
         },
       });
     });

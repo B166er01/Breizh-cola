@@ -1,11 +1,8 @@
 "use client";
-// app/TotoContext.js
-import React, { createContext, useContext, useState } from "react";
 
-// Create the context
+import React, { createContext, useContext, useState } from "react";
 const ThemeContext = createContext(undefined);
 
-// Custom hook to use the TotoContext
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
@@ -14,9 +11,8 @@ export const useTheme = () => {
   return context;
 };
 
-// Create the provider component
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(""); // State to hold the value
+  const [theme, setTheme] = useState("");
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

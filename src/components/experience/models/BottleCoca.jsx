@@ -1,5 +1,6 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+
+import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,21 +15,21 @@ export function BottleCoca(props) {
   useGSAP(() => {
     if (bottleRef.current) {
       gsap.to(bottleRef.current.position, {
-        x: 68, // Target x position
+        x: 68,
         scrollTrigger: {
-          trigger: "#blue", // The element that triggers the animation
-          start: "top 40%", // Start the animation when the top of #blue is 40% from the top of the viewport
+          trigger: "#blue",
+          start: "top 40%",
         },
-        duration: 1.5, // Duration of the animation
+        duration: 1.5,
       });
 
       gsap.to(bottleRef.current.rotation, {
-        y: Math.PI, // Target y rotation (180 degrees)
+        y: Math.PI,
         scrollTrigger: {
-          trigger: "#blue", // The element that triggers the animation
-          start: "top 40%", // Start the animation when the top of #blue is 40% from the top of the viewport
+          trigger: "#blue",
+          start: "top 40%",
         },
-        duration: 1.5, // Duration of the animation
+        duration: 1.5,
       });
     }
   });

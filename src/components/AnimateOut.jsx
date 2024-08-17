@@ -7,7 +7,7 @@ const AnimateOut = () => {
   useEffect(() => {
     gsap.to(["#transition0", "#transition1", "#transition2", "#transition3"], {
       top: "-100%",
-      duration: 0.44, // Adjust the duration as needed
+      duration: 0.44,
       delay: 0.25,
       stagger: 0.12,
     });

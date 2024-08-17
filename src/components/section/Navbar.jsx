@@ -15,10 +15,8 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
       if (currentScrollTop > lastScrollTop.current && currentScrollTop > 200) {
-        // Scrolling down and passed 200px
         gsap.to(navRef.current, { translateY: "-100%", duration: 0.3 });
       } else if (currentScrollTop < lastScrollTop.current) {
-        // Scrolling up
         gsap.to(navRef.current, { translateY: "0%", duration: 0.3 });
       }
       lastScrollTop.current = currentScrollTop;

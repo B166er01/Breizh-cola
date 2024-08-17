@@ -1,4 +1,5 @@
 "use client";
+
 import MagneticButtons from "../MagneticButtons";
 import { useTheme } from "../ThemeProvider";
 

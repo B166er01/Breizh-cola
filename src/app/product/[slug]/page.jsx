@@ -1,16 +1,16 @@
 "use client";
 
+import React from "react";
 import AnimateOut from "@/components/AnimateOut";
 import BreizhOriginal from "@/components/experience/views/BreizhOriginal";
 import ProductTitle from "@/components/ProductTittle";
 import Screen from "@/components/section/Screen";
 import ThemeChanger from "@/components/ThemeChanger";
 import { useTheme } from "@/components/ThemeProvider";
-import React from "react";
 
 const page = ({ params }) => {
   const { theme } = useTheme();
-  console.log(theme);
+
   return (
     <>
       <ThemeChanger />

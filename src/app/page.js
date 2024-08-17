@@ -6,6 +6,7 @@ import { useTheme } from "../components/ThemeProvider";
 import AnimateOut from "@/components/AnimateOut";
 import Screen from "@/components/section/Screen";
 import ProductOriginal from "@/components/section/ProductOriginal";
+import Test from "@/components/section/Test";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -17,11 +18,12 @@ export default function Home() {
       <main
         className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500 min-h-[3500px]`}
       >
-        <div className="uppercase w-full h-screen  flex flex-col items-center justify-center text-8xl ">
+        <div className="flex flex-col items-center justify-center w-full h-screen uppercase text-8xl ">
           home
         </div>
         <Screen />
         <ProductOriginal />
+        <Test />
       </main>
     </>
   );

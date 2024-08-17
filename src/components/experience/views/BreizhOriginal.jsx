@@ -1,9 +1,8 @@
 "use client";
+
 import { Environment, Float, OrthographicCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-
-import { BottleCoca } from "../models/BottleCoca";
 import { BottleOriginal } from "../models/BottleOriginal";
 
 const BreizhOriginal = () => {
