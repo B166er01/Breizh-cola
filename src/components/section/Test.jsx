@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -8,14 +8,37 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Test = () => {
+  const containerRef = useRef(null);
+  const paragrapheRef = useRef(null);
+
   useGSAP(() => {
-    const anim = gsap.from(".scene p", {
-      scale: 0,
+    const text = paragrapheRef.current.innerText;
+    paragrapheRef.current.innerHTML = ""; // Clear existing text
+
+    // Split the paragraph into characters and wrap each in a span
+    const characters = text.split("").map((char, index) => {
+      const span = document.createElement("span");
+      span.innerText = char;
+      span.style.opacity = 0; // Set initial opacity to 0
+      paragrapheRef.current.appendChild(span);
+      return span;
     });
 
+    const anim = gsap.to(
+      characters,
+      {
+        opacity: 1,
+        stagger: {
+          each: 0.4, // Controls the speed of letter reveal
+        },
+        ease: "none",
+      },
+      "one"
+    );
+
     const st = ScrollTrigger.create({
-      trigger: ".scene",
-      start: "top top+=20",
+      trigger: containerRef.current,
+      start: "top top",
       end: "bottom top",
       scrub: true,
       markers: true,
@@ -32,27 +55,23 @@ const Test = () => {
     //   st.kill();
     //   anim.kill();
     // };
-  }, []);
+  });
 
   return (
     <div className="p-5">
-      <section className="h-[calc(100vh-40px)] bg-teal-500 flex justify-center items-center mb-5">
-        <p className="text-lg">Section 1</p>
-      </section>
-      <section className="h-[calc(100vh-40px)] bg-teal-500 flex justify-center items-center mb-5">
-        <p className="text-lg">Section 2</p>
-      </section>
-      <section className="scene h-[calc(100vh-40px)] bg-cyan-500 flex justify-center items-center mb-5">
-        <p className="text-lg">Section 3</p>
-      </section>
-      <section className="h-[calc(100vh-40px)] bg-teal-500 flex justify-center items-center mb-5">
+      <div
+        ref={containerRef}
+        className="flex overflow-hidden flex-col relative w-full h-screen text-5xl leading-tight uppercase bg-myWhite text-myRed font-poppins pt-[20vh]"
+      >
+        <div className="text-center">
+          <div ref={paragrapheRef} className="w-1/2 mx-auto">
+            Présent lors de nombreux événements, Breizh Cola est un véritable
+            partenaire du développement culturel en Bretagne.
+          </div>
+        </div>
+      </div>
+      <section className="flex items-center justify-center h-screen bg-teal-500 ">
         <p className="text-lg">Section 4</p>
-      </section>
-      <section className="h-[calc(100vh-40px)] bg-teal-500 flex justify-center items-center mb-5">
-        <p className="text-lg">Section 5</p>
-      </section>
-      <section className="h-[calc(100vh-40px)] bg-teal-500 flex justify-center items-center mb-5">
-        <p className="text-lg">Section 6</p>
       </section>
     </div>
   );

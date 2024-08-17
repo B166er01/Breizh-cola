@@ -24,6 +24,7 @@ export default function Home() {
         <Screen />
         <ProductOriginal />
         <Test />
+        {/* <Screen /> */}
       </main>
     </>
   );
