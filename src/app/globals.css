@@ -4,12 +4,13 @@
 
 @font-face {
   font-family: 'creamCake';
-  src: url('/font/Cream\ Cake.otf');
+  src: url('../../public/font/Cream\ Cake.otf') format('opentype');
 }
 @font-face {
   font-family: 'poppins';
-  src: url('/font/poppins-extrabold.ttf');
+  src: url('../../public/font/poppins-extrabold.ttf') format('truetype');
 }
+
 
 @layer base {
   :root {
