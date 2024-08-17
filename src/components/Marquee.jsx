@@ -57,12 +57,12 @@ const Marquee = () => {
           <p className="relative pr-5 m-0 " ref={firstText}>
             {" "}
             breizh cola - breizh cola - breizh cola - breizh cola - breizh cola
-            -
+            - breizh cola -
           </p>
           <p className="absolute top-0 left-[100%] m-0 pr-5 " ref={secondText}>
             {" "}
             breizh cola - breizh cola - breizh cola - breizh cola - breizh cola
-            -
+            - breizh cola -
           </p>
         </div>
       </div>
