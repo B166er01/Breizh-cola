@@ -7,6 +7,7 @@ import AnimateOut from "@/components/AnimateOut";
 import Screen from "@/components/section/Screen";
 import ProductOriginal from "@/components/section/ProductOriginal";
 import Test from "@/components/section/Test";
+import Marquee from "@/components/Marquee";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -22,6 +23,7 @@ export default function Home() {
           home
         </div>
         <Screen />
+        <Marquee />
         <ProductOriginal />
         <Test />
         {/* <Screen /> */}
