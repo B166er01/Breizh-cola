@@ -5,7 +5,6 @@ import SmoothScrolling from "@/components/SmoothScrolling";
 import Navbar from "@/components/section/Navbar";
 import Footer from "@/components/section/Footer";
 import Transition from "@/components/section/Transition";
-import ScrollSmottherGsap from "../components/ScrollSmottherGsap";
 
 const inter = Inter({ subsets: ["latin"] });
 
