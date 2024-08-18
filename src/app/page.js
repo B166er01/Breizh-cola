@@ -23,14 +23,12 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full h-screen uppercase text-8xl ">
           home
         </div>
-        <Screen />
+
         {/* <Marquee /> */}
         <ProductOriginal />
         {/* <Marquee /> */}
 
         <Test />
-        <Screen />
-        <Sponsorts2 />
         <Screen />
       </main>
     </>

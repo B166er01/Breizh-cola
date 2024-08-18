@@ -68,28 +68,6 @@ const Sponsorts2 = () => {
   const linksRef = useRef([]);
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    const anim = gsap.to(
-      linksRef.current,
-      {
-        scale: 1,
-        stagger: {
-          each: 0.4, // Controls the speed of letter reveal
-        },
-        ease: "none",
-      },
-      "one"
-    );
-
-    const st = ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: "top top",
-      end: "bottom 50%",
-      scrub: true,
-      animation: anim,
-      //markers: true,
-    });
-  }, []);
   return (
     <div className="flex flex-col items-center w-full min-h-screen ">
       <div className="w-1/2 text-5xl text-center capitalize bg-green-500 font-poppins">
