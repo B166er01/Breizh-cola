@@ -38,9 +38,6 @@ const Test = () => {
       "one"
     );
 
-    // Combine text and image animations into a single timeline
-    const combinedAnim = gsap.timeline().add(anim, "start"); // Start both animations together
-
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
@@ -48,34 +45,10 @@ const Test = () => {
       scrub: true,
       //markers: true,
       pin: true,
-      animation: combinedAnim,
+      animation: anim,
       onLeave: (self) => {
         self.kill(true);
-        combinedAnim.progress(1);
-      },
-    });
-
-    const anim2 = gsap.fromTo(
-      im1Ref.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        ease: "none",
-      },
-      "one"
-    );
-
-    const st2 = ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-      markers: true,
-      // pin: true,
-      animation: anim2,
-      onLeave: (self) => {
-        self.kill(true);
-        anim2.progress(1);
+        anim.progress(1);
       },
     });
   });
@@ -91,18 +64,6 @@ const Test = () => {
             Présent lors de nombreux événements, Breizh Cola est un véritable
             partenaire du développement culturel en Bretagne.
           </div>
-        </div>
-        <div
-          ref={im1Ref}
-          className="w-[250px] h-[250px]  z-20 absolute top-1/2 left-1/2"
-        >
-          <Image
-            src={"/image/sponsorts/music/AuBDM.png"}
-            alt="toto"
-            width={200}
-            height={200}
-            layout="responsive"
-          />
         </div>
       </div>
       <div className="h-[1vh]"></div>
