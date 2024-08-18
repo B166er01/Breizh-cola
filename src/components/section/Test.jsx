@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Test = () => {
   const containerRef = useRef(null);
   const paragrapheRef = useRef(null);
+  const im1Ref = useRef(null);
 
   useGSAP(() => {
     const text = paragrapheRef.current.innerText;
@@ -54,15 +55,33 @@ const Test = () => {
       },
     });
 
-    // // Cleanup on component unmount
-    // return () => {
-    //   st.kill();
-    //   anim.kill();
-    // };
+    const anim2 = gsap.fromTo(
+      im1Ref.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        ease: "none",
+      },
+      "one"
+    );
+
+    const st2 = ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      markers: true,
+      // pin: true,
+      animation: anim2,
+      onLeave: (self) => {
+        self.kill(true);
+        anim2.progress(1);
+      },
+    });
   });
 
   return (
-    <div className="p-5">
+    <div className="p-5 ">
       <div
         ref={containerRef}
         className="flex flex-col relative  w-full h-screen text-5xl leading-tight uppercase  text-mainColor font-poppins pt-[20vh]"
@@ -73,10 +92,20 @@ const Test = () => {
             partenaire du développement culturel en Bretagne.
           </div>
         </div>
+        <div
+          ref={im1Ref}
+          className="w-[250px] h-[250px]  z-20 absolute top-1/2 left-1/2"
+        >
+          <Image
+            src={"/image/sponsorts/music/AuBDM.png"}
+            alt="toto"
+            width={200}
+            height={200}
+            layout="responsive"
+          />
+        </div>
       </div>
-      <section className="flex items-center justify-center h-screen bg-teal-500 ">
-        <p className="text-lg">Section 4</p>
-      </section>
+      <div className="h-[1vh]"></div>
     </div>
   );
 };

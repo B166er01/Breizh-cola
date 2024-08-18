@@ -5,6 +5,7 @@ import SmoothScrolling from "@/components/SmoothScrolling";
 import Navbar from "@/components/section/Navbar";
 import Footer from "@/components/section/Footer";
 import Transition from "@/components/section/Transition";
+import ScrollSmottherGsap from "../components/ScrollSmottherGsap";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {/* <SmoothScrolling> */}
+
         <ThemeProvider>
           <Transition />
           <Navbar />
           {children}
           <Footer />
         </ThemeProvider>
+
         {/* </SmoothScrolling> */}
       </body>
     </html>

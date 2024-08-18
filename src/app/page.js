@@ -25,6 +25,8 @@ export default function Home() {
         <Screen />
         <Marquee />
         <ProductOriginal />
+        {/* <Marquee /> */}
+
         <Test />
         {/* <Screen /> */}
       </main>

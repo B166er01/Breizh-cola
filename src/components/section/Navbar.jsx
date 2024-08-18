@@ -41,17 +41,6 @@ const Navbar = () => {
           </span>
         </AnimatedLink>
       </div>
-
-      <ul className="flex items-center justify-center gap-8 text-2xl capitalize">
-        <li>
-          {" "}
-          <AnimatedLink href="/product/zero">products</AnimatedLink>
-        </li>
-        <li>
-          {" "}
-          <AnimatedLink href="/">home</AnimatedLink>
-        </li>
-      </ul>
     </div>
   );
 };
