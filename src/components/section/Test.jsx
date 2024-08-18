@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
-import Screen from "./Screen";
-import Sponsorts from "./Sponsorts";
+
+import Sponsorts2 from "./Sponsorts2";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,9 +67,8 @@ const Test = () => {
           </div>
         </div>
       </div>
-      {/* <Screen /> */}
-      <Sponsorts />
-      {/* <div className="h-[150vh]"></div> */}
+      {/* <Sponsorts2 /> */}
+      <div className="h-1"></div>
     </div>
   );
 };
