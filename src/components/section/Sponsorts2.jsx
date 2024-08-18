@@ -67,28 +67,25 @@ const sportSponsort = [
 const Sponsorts2 = () => {
   const linksRef = useRef([]);
 
-  //   useGSAP(() => {
-  //     linksRef.current.forEach((link, i) => {
-  //       gsap.to(link, {
-  //         scale: 1,
-  //         ease: "back.out",
-  //         scrollTrigger: {
-  //           trigger: "#tyty",
-  //           start: "top 20%", // When the link reaches 70% of the viewport height
-  //           markers: true,
-  //         },
-  //       });
-  //     });
-  //   }, []);
+  useGSAP(() => {
+    linksRef.current.forEach((link, i) => {
+      gsap.to(link, {
+        scale: 1,
+        ease: "back.out",
+        scrollTrigger: {
+          trigger: "#tyty",
+          start: "top 30%", // When the link reaches 70% of the viewport height
+          markers: true,
+        },
+      });
+    });
+  }, []);
   return (
-    <div className="flex flex-col items-center w-full min-h-screen ">
-      <div className="w-1/2 text-5xl text-center capitalize bg-green-500 font-poppins">
+    <div className="flex flex-col items-center w-full min-h-screen " id="tyty">
+      <div className="w-1/2 text-5xl text-center capitalize font-poppins">
         {" "}
         <h3>sports</h3>
-        <div
-          className="flex flex-wrap gap-6 m-2 scale-0 bg-green-100"
-          id="tyty"
-        >
+        <div className="flex flex-wrap gap-6 m-2">
           {sportSponsort.map((s, i) => (
             <Link
               key={i}
