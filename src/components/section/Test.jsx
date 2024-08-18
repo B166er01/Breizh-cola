@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import Screen from "./Screen";
+import Sponsorts from "./Sponsorts";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +68,9 @@ const Test = () => {
           </div>
         </div>
       </div>
-      <div className="h-[150vh]"></div>
+      {/* <Screen /> */}
+      <Sponsorts />
+      {/* <div className="h-[150vh]"></div> */}
     </div>
   );
 };

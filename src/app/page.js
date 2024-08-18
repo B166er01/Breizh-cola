@@ -23,7 +23,7 @@ export default function Home() {
           home
         </div>
         <Screen />
-        <Marquee />
+        {/* <Marquee /> */}
         <ProductOriginal />
         {/* <Marquee /> */}
 
