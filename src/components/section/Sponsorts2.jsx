@@ -69,11 +69,24 @@ const Sponsorts2 = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
+    const anim = gsap.to(
+      linksRef.current,
+      {
+        scale: 1,
+        stagger: {
+          each: 0.4, // Controls the speed of letter reveal
+        },
+        ease: "none",
+      },
+      "one"
+    );
+
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
-      end: "bottom top",
+      end: "bottom 50%",
       scrub: true,
+      animation: anim,
       //markers: true,
     });
   }, []);
@@ -90,7 +103,7 @@ const Sponsorts2 = () => {
             <Link
               key={i}
               href={s.linkUrl}
-              className="w-[200px] h-[200px] "
+              className="w-[200px] h-[200px] scale-0 "
               ref={(el) => (linksRef.current[i] = el)}
             >
               <Image
