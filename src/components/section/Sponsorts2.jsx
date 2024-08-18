@@ -66,31 +66,31 @@ const sportSponsort = [
 
 const Sponsorts2 = () => {
   const linksRef = useRef([]);
+  const containerRef = useRef(null);
 
   useGSAP(() => {
-    linksRef.current.forEach((link, i) => {
-      gsap.to(link, {
-        scale: 1,
-        ease: "back.out",
-        scrollTrigger: {
-          trigger: "#tyty",
-          start: "top 30%", // When the link reaches 70% of the viewport height
-          markers: true,
-        },
-      });
+    const st = ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      //markers: true,
     });
   }, []);
   return (
-    <div className="flex flex-col items-center w-full min-h-screen " id="tyty">
-      <div className="w-1/2 text-5xl text-center capitalize font-poppins">
+    <div className="flex flex-col items-center w-full min-h-screen ">
+      <div className="w-1/2 text-5xl text-center capitalize bg-green-500 font-poppins">
         {" "}
         <h3>sports</h3>
-        <div className="flex flex-wrap gap-6 m-2">
+        <div
+          className="flex flex-wrap gap-6 m-2 bg-green-100"
+          ref={containerRef}
+        >
           {sportSponsort.map((s, i) => (
             <Link
               key={i}
               href={s.linkUrl}
-              className="w-[200px] h-[200px] scale-0"
+              className="w-[200px] h-[200px] "
               ref={(el) => (linksRef.current[i] = el)}
             >
               <Image
