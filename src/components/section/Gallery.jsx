@@ -22,6 +22,12 @@ const Gallery = () => {
             containerRef.current.scrollWidth - galleryRef.current.clientWidth
           }`,
         scrub: true,
+        snap: {
+          snapTo: 1 / (sections.length - 1), // Snap to each panel's width
+          duration: 0.4,
+          delay: 0.1,
+          ease: "power1.inOut",
+        },
         // markers: true,
       },
     });
