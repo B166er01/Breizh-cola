@@ -48,11 +48,11 @@ const Marquee = () => {
   };
 
   return (
-    <div className="relative flex h-[25vh] w-full overflow-hidden bg-myWhite">
+    <div className="relative flex h-[28vh] w-full overflow-hidden bg-myWhite">
       <div className="absolute z-10 -translate-x-3 top-2/4 border-y-2 border-skin-border border-mainColor text-myRed">
         <div
           ref={slider}
-          className="relative capitalize whitespace-nowrap text-8xl font-creamCake"
+          className="relative capitalize whitespace-nowrap text-9xl font-creamCake"
         >
           <p className="relative pr-5 m-0 " ref={firstText}>
             {" "}

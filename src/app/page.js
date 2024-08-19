@@ -9,6 +9,8 @@ import ProductOriginal from "@/components/section/ProductOriginal";
 import Test from "@/components/section/Test";
 import Marquee from "@/components/Marquee";
 import Sponsorts2 from "@/components/section/Sponsorts2";
+import Landing from "@/components/section/Landing";
+import Gallery from "@/components/section/Gallery";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -18,18 +20,15 @@ export default function Home() {
       <ThemeChanger />
       <AnimateOut />
       <main
-        className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500 min-h-[3500px]`}
+        className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500`}
       >
-        <div className="flex flex-col items-center justify-center w-full h-screen uppercase text-8xl ">
-          home
-        </div>
+        <Landing />
 
         {/* <Marquee /> */}
+        {/* <Marquee /> */}
+
         <ProductOriginal />
-        {/* <Marquee /> */}
-
-        <Test />
-        <Screen />
+        <Gallery />
       </main>
     </>
   );

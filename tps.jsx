@@ -1,138 +1,86 @@
-useGSAP(() => {
-  // Ensure all refs are attached
-  if (
-    imageRef1.current &&
-    imageRef2.current &&
-    imageRef3.current &&
-    imageRef4.current
-  ) {
-    // Create a GSAP timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        //   pinSpacing: true,
-        start: "bottom 10%", // When the top of the music-sponsort section is at 20% of the viewport
-        markers: true, // Set to true if you want to see the start and end markers (remove this line in production)
-        toggleActions: "play none none none",
-      },
-    });
+<!-- sroller -->
 
-    // Add animations to the timeline
-    tl.to(imageRef2.current, {
-      x: "20vw", // Custom x position
-      y: "-5vh", // Custom y position
-      duration: 0.2,
-      ease: "back.out",
-    }) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef3.current,
-        {
-          x: "-19vw", // Custom x position
-          y: "-2vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef4.current,
-        {
-          x: "35vw", // Custom x position
-          y: "15vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      )
-      .to(
-        imageRef5.current,
-        {
-          x: "-35vw", // Custom x position
-          y: "12vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef6.current,
-        {
-          x: "38vw", // Custom x position
-          y: "-15vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef7.current,
-        {
-          x: "-38vw", // Custom x position
-          y: "-15vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef8.current,
-        {
-          x: "42vw", // Custom x position
-          y: "42vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef9.current,
-        {
-          x: "-42vw", // Custom x position
-          y: "42vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef10.current,
-        {
-          x: "-8vw", // Custom x position
-          y: "27vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef11.current,
-        {
-          x: "21vw", // Custom x position
-          y: "28vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef12.current,
-        {
-          x: "-24vw", // Custom x position
-          y: "38vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ) // Stagger by 0.2 seconds relative to the previous animation
-      .to(
-        imageRef13.current,
-        {
-          x: "7vw", // Custom x position
-          y: "35vh", // Custom y position
-          duration: 0.2,
-          ease: "back.out",
-        },
-        "<0.07"
-      ); // Stagger by 0.2 seconds relative to the previous animation
-  }
-}, []);
+
+<div class="container">
+  <section class="panel red">
+    <div class="presentation">
+      <div class="left-part">
+
+        <div class="col">
+          <div class="skew-container">
+            <img src="https://res.cloudinary.com/dos8mey8r/image/upload/v1695840397/photographe/c1_1_hizr5t.jpg"
+              alt="" class="grayscale" />
+          </div>
+          <div class="skew-container">
+            <img src="https://res.cloudinary.com/dos8mey8r/image/upload/v1695840397/photographe/c1_1_hizr5t.jpg"
+              alt="" class="grayscale" />
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="skew-container">
+            <img src="https://res.cloudinary.com/dos8mey8r/image/upload/v1695840397/photographe/c1_1_hizr5t.jpg"
+              alt="" class="grayscale" />
+          </div>
+          <div class="skew-container">
+            <img src="https://res.cloudinary.com/dos8mey8r/image/upload/v1695840397/photographe/c1_1_hizr5t.jpg"
+              alt="" class="grayscale" />
+          </div>
+
+        </div>
+      </div>
+
+      <div class="right-part">
+
+        <div>
+          <h3>Photographe Créateur d'Émotions</h3>
+          <p>Ma passion est de capturer des émotions authentiques à travers mon objectif. Chaque photo raconte une
+            histoire unique et intemporelle, remplie de couleurs et de sentiments. Mon art est de faire revivre
+            ces moments précieux pour l'éternité.</p>
+        </div>
+
+        <div>
+          <h3> L'Art de la Photographie Capturé</h3>
+          <p>Je suis un photographe dévoué à l'art de capturer des moments spéciaux. Mes images sont le reflet de
+            l'authenticité et de la simplicité. Chaque cliché est une invitation à explorer des émotions et des
+            souvenirs uniques figés dans le temps.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="panel red">
+    <div class="animate-me">
+      <img src="./public/abstract-painting-dirty-wood-backdrop-indoors-generated-by-ai.jpg" alt="" />
+    </div>
+    <p class="animate-me2">Mode.</p>
+
+  </section>
+  <section class="panel orange">
+    <div class="animate-me">
+      <img src="./public/abstract-painting-dirty-wood-backdrop-indoors-generated-by-ai.jpg" alt="" />
+    </div>
+    <p class="animate-me2">Evenements.</p>
+  </section>
+  <section class="panel purple">
+    <div class="animate-me">
+      <img src="./public/abstract-painting-dirty-wood-backdrop-indoors-generated-by-ai.jpg" alt="" />
+    </div>
+    <p class="animate-me2">Artistiques.</p>
+  </section>
+  <section class="panel green">
+    <div class="animate-me">
+      <img src="./public/abstract-painting-dirty-wood-backdrop-indoors-generated-by-ai.jpg" alt="" />
+    </div>
+    <p class="animate-me2">Nature.</p>
+  </section>
+  <section class="panel gray">
+    <div class="animate-me">
+      <img src="./public/abstract-painting-dirty-wood-backdrop-indoors-generated-by-ai.jpg" alt="" />
+    </div>
+    <p class="animate-me2">Lorem ipsum dolor sit.</p>
+  </section>
+</div>
