@@ -33,9 +33,15 @@ const Gallery = () => {
 
   return (
     <div className="container intro_slide">
-      <section className="h-screen bg-blue-200 min-vw-100 panel"></section>
-      <section className="h-screen bg-blue-400 min-vw-100 panel"></section>
-      <section className="h-screen bg-blue-600 min-vw-100 panel"></section>
+      <section className="flex items-center justify-center h-screen text-8xl min-vw-100 panel">
+        One
+      </section>
+      <section className="flex items-center justify-center h-screen text-8xl min-vw-100 panel">
+        Two
+      </section>
+      <section className="flex items-center justify-center h-screen text-8xl min-vw-100 panel">
+        Three
+      </section>
     </div>
   );
 };
