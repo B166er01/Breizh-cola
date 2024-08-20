@@ -23,11 +23,11 @@
   }
   .theme-cherry {
     --mainColor: #fef2f2;
-    --secondColor: #721242;
+    --secondColor: #400824;
   }
   .theme-stevia {
     --mainColor: #fef2f2;
-    --secondColor: #789b2b;
+    --secondColor: #005103;
   }
 
 }

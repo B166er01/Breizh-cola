@@ -10,11 +10,11 @@ const ThemeChanger = () => {
     const handleScroll = () => {
       const scrollPositionY = window.scrollY;
 
-      if (scrollPositionY >= 1800 && scrollPositionY < 2700) {
+      if (scrollPositionY >= 2060 && scrollPositionY < 3140) {
         setTheme("theme-reverse");
-      } else if (scrollPositionY >= 2700 && scrollPositionY < 3600) {
+      } else if (scrollPositionY >= 3140 && scrollPositionY < 4220) {
         setTheme("theme-cherry");
-      } else if (scrollPositionY >= 3600 && scrollPositionY < 4500) {
+      } else if (scrollPositionY >= 4220 && scrollPositionY < 5300) {
         setTheme("theme-stevia");
       } else {
         setTheme(""); // Default theme for other scroll positions

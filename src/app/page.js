@@ -11,6 +11,7 @@ import Marquee from "@/components/Marquee";
 import Sponsorts2 from "@/components/section/Sponsorts2";
 import Landing from "@/components/section/Landing";
 import Gallery from "@/components/section/Gallery";
+import SkewScroll from "@/components/section/SkewScroll";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -25,6 +26,8 @@ export default function Home() {
         <Landing />
 
         <Gallery />
+        <Screen />
+        <SkewScroll />
       </main>
     </>
   );
