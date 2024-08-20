@@ -65,7 +65,11 @@ const ProductCherry = () => {
   }, [hasAnimated]);
 
   return (
-    <div id="purple" className="relative w-full h-screen" ref={screenRef}>
+    <div
+      id="purple"
+      className="relative w-full h-screen overflow-hidden"
+      ref={screenRef}
+    >
       <div
         className="relative scale-0 w-[440px] h-[220px] top-[50vh] left-1/2"
         ref={buttonRef}

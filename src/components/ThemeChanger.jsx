@@ -6,47 +6,30 @@ import { useTheme } from "../components/ThemeProvider";
 const ThemeChanger = () => {
   const { setTheme } = useTheme();
 
-  /**
-   * @layer base {
-  :root {
-    --mainColor: #fef2f2;
-    --secondColor: #450a0a;
-  }
-  .theme-reverse {
-    --mainColor: #450a0a;
-    --secondColor: #fef2f2;
-  }
-  .theme-cherry {
-    --mainColor: #fef2f2;
-    --secondColor: #721242;
-  }
-  .theme-stevia {
-    --mainColor: #fef2f2;
-    --secondColor: #789b2b;
-  }
-
-}
-   */
-
   useEffect(() => {
-    function handleScroll() {
+    const handleScroll = () => {
       const scrollPositionY = window.scrollY;
 
-      if (scrollPositionY > 3300) {
+      if (scrollPositionY >= 1800 && scrollPositionY < 2700) {
         setTheme("theme-reverse");
+      } else if (scrollPositionY >= 2700 && scrollPositionY < 3600) {
+        setTheme("theme-cherry");
+      } else if (scrollPositionY >= 3600 && scrollPositionY < 4500) {
+        setTheme("theme-stevia");
       } else {
-        setTheme("");
+        setTheme(""); // Default theme for other scroll positions
       }
-    }
+    };
 
     window.addEventListener("scroll", handleScroll);
 
+    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [setTheme]);
 
-  return <></>;
+  return null;
 };
 
 export default ThemeChanger;
