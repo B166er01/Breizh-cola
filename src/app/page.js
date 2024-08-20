@@ -27,7 +27,7 @@ export default function Home() {
         {/* <Marquee /> */}
         {/* <Marquee /> */}
 
-        <ProductOriginal />
+        {/* <ProductOriginal /> */}
         <Gallery />
       </main>
     </>

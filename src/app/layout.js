@@ -17,14 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SmoothScrolling>
-          <ThemeProvider>
-            <Transition />
-            <Navbar />
-            {children}
-            <Footer />
-          </ThemeProvider>
-        </SmoothScrolling>
+        {/* <SmoothScrolling> */}
+        <ThemeProvider>
+          <Transition />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
+        {/* </SmoothScrolling> */}
       </body>
     </html>
   );

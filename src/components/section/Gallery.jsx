@@ -3,46 +3,39 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Gallery = () => {
   const containerRef = useRef(null);
   const galleryRef = useRef(null);
 
   useGSAP(() => {
-    const sections = gsap.utils.toArray(".panel");
+    gsap.registerPlugin(ScrollTrigger);
+    let sections = gsap.utils.toArray(".panel");
 
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
+      ease: "none",
       scrollTrigger: {
-        trigger: galleryRef.current,
+        trigger: ".intro_slide",
         pin: true,
-        start: "top top",
-        end: () =>
-          `+=${
-            containerRef.current.scrollWidth - galleryRef.current.clientWidth
-          }`,
-        scrub: true,
+        pinSpacer: false,
+        scrub: 0.5,
         snap: {
-          snapTo: 1 / (sections.length - 1), // Snap to each panel's width
-          duration: 0.4,
-          delay: 0.1,
-          ease: "power1.inOut",
+          snapTo: 1 / (sections.length - 1),
+          duration: 0.15,
         },
-        // markers: true,
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=3500",
       },
     });
   });
 
   return (
-    <div ref={galleryRef} className="w-full h-screen overflow-hidden">
-      <div
-        ref={containerRef}
-        className="w-[300%] h-screen flex flex-nowrap bg-amber-700"
-      >
-        <div className="w-screen h-screen bg-blue-200 panel">one</div>
-        <div className="w-screen h-screen bg-blue-400 panel">two</div>
-        <div className="w-screen h-screen bg-blue-600 panel">three</div>
-      </div>
+    <div className="container intro_slide">
+      <section className="h-screen bg-blue-200 min-vw-100 panel"></section>
+      <section className="h-screen bg-blue-400 min-vw-100 panel"></section>
+      <section className="h-screen bg-blue-600 min-vw-100 panel"></section>
     </div>
   );
 };
