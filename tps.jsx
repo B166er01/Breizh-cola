@@ -1,53 +1,57 @@
-const { useState, useLayoutEffect, useRef } = React;
-const Intro = () => {
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-      let sections = gsap.utils.toArray(".panel");
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".intro_slide",
-          pin: true,
-          scrub: 0.5,
-          snap: {
-            snapTo: 1 / (sections.length - 1),
-            duration: 0.05,
-          },
-          // base vertical scrolling on how wide the container is so it feels more natural.
-          end: "+=3500",
-        },
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+const Screen = () => {
+  const screenRef = useRef(null);
+  const targetRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // useEffect(() => {
+  //   const target = targetRef.current;
+  //   const screen = screenRef.current;
+
+  //   // Create an Intersection Observer instance
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting && !hasAnimated) {
+  //           // Animation with GSAP when the element comes into view for the first time
+  //           gsap.to(target, {
+  //             opacity: 1,
+  //             y: 0,
+  //             duration: 1,
+  //             ease: "power2.out",
+  //           });
+  //           setHasAnimated(true); // Set state to true to prevent reverse animation
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.9 } // Adjust the threshold value as needed
+  //   );
+
+  //   // Observe the target element
+  //   if (target) observer.observe(target);
+
+  //   // Cleanup observer on component unmount
+  //   return () => {
+  //     if (target) observer.unobserve(target);
+  //   };
+  // }, [hasAnimated]); // Dependency on hasAnimated to avoid re-creating observer
 
   return (
-    <div className="container intro_slide">
-      {[...Array(3)].map((e, i) => {
-        return (
-          <section className="min-h-screen min-vw-100 panel" key={i}>
-            <div className="flex flex-col md:flex-row-reverse bg-[url(https://source.unsplash.com/random/1)] bg-no-repeat bg-cover">
-              <div className="flex flex-col min-h-screen basis-full bg-gradient-to-b md:bg-gradient-to-r from-black opacity-90 md:flex-row">
-                <div className="my-auto text-xl text-white basis-1/3">
-                  <h1>Hiiii</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quasi porro repudiandae praesentium doloribus aliquam, in
-                    quibusdam reiciendis excepturi harum officiis nostrum
-                    obcaecati. Quibusdam, velit placeat maiores in quidem quo.
-                    Beatae?
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        );
-      })}
+    <div
+      className="flex items-center justify-center w-full h-screen bg-slate-600 text-8xl"
+      ref={screenRef}
+    >
+      <div
+        ref={targetRef}
+        className="flex items-center justify-center h-64 text-white bg-blue-500"
+      >
+        <span>La receete</span>
+      </div>
     </div>
   );
 };
 
-ReactDOM.render(<Intro />, document.getElementById("root"));
+export default Screen;

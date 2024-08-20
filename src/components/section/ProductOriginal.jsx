@@ -64,14 +64,14 @@ const ProductOriginal = () => {
         </MagneticButtons>
       </div>
 
-      <div className="flex flex-col gap-6 ml-20 uppercase font-poppins text-8xl  ">
+      <div className="flex flex-col gap-6 ml-20 uppercase font-poppins text-8xl ">
         <p className="flex gap-8 overflow-hidden">
           <span ref={ref1} className="translate-y-full">
             la recette
           </span>
           <span
             ref={ref2}
-            className="overflow-hidden translate-y-full  text-stroke text-stroke-mainColor text-secondColor transition-colors duration-500 "
+            className="overflow-hidden transition-colors duration-500 translate-y-full text-stroke text-stroke-mainColor text-secondColor "
           >
             originale
           </span>
@@ -79,7 +79,7 @@ const ProductOriginal = () => {
         <p className="flex gap-8 overflow-hidden">
           <span
             ref={ref3}
-            className="translate-y-full text-stroke text-stroke-mainColor text-secondColor transition-colors duration-500 "
+            className="transition-colors duration-500 translate-y-full text-stroke text-stroke-mainColor text-secondColor "
           >
             Son
           </span>
@@ -93,7 +93,7 @@ const ProductOriginal = () => {
           </span>
           <span
             ref={ref6}
-            className="translate-y-full text-stroke text-stroke-mainColor text-secondColor transition-colors duration-500 "
+            className="transition-colors duration-500 translate-y-full text-stroke text-stroke-mainColor text-secondColor "
           >
             parfait
           </span>

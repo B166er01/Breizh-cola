@@ -23,7 +23,7 @@ export default function Home() {
         className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500`}
       >
         <Landing />
-        <Screen />
+
         <Gallery />
       </main>
     </>

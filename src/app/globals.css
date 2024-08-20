@@ -35,14 +35,7 @@ body {
 }
 
 
-.container {
-  overscroll-behavior: none;
-  width: 600%;
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
 
-}
 
 .panel {
   width: 100vw;
@@ -51,9 +44,6 @@ body {
 }
 
 
-
-
-
-.min-vw-100 {
-  min-width: 100vw;
+.toto {
+  transform:  translateY(100%);
 }
