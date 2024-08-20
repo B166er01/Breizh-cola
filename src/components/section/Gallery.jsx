@@ -23,7 +23,7 @@ const Gallery = () => {
         scrub: 0.5,
         snap: {
           snapTo: 1 / (sections.length - 1),
-          duration: 0.15,
+          duration: 0.25,
         },
         // base vertical scrolling on how wide the container is so it feels more natural.
         end: "+=3500",
@@ -33,13 +33,13 @@ const Gallery = () => {
 
   return (
     <div className="container intro_slide">
-      <section className="flex items-center justify-center h-screen text-8xl min-vw-100 panel">
+      <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
         One
       </section>
-      <section className="flex items-center justify-center h-screen text-8xl min-vw-100 panel">
+      <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
         Two
       </section>
-      <section className="flex items-center justify-center h-screen text-8xl min-vw-100 panel">
+      <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
         Three
       </section>
     </div>

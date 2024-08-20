@@ -32,7 +32,7 @@ export function B1(props) {
 
     let tl2 = gsap
       .timeline({
-        delay: 2,
+        delay: 1,
       })
       .to(
         b1Ref.current.position,
