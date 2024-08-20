@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ProductOriginal from "./ProductOriginal";
 import Screen from "./Screen";
+import ProductCherry from "./ProductCherry";
 
 const Gallery = () => {
   const containerRef = useRef(null);
@@ -21,10 +22,10 @@ const Gallery = () => {
         trigger: containerRef.current,
         pin: true,
         pinSpacer: false,
-        scrub: 0.6,
+        scrub: 0.8,
         snap: {
           snapTo: 1 / (sections.length - 1),
-          duration: 0.25,
+          duration: 0.35,
         },
         // base vertical scrolling on how wide the container is so it feels more natural.
         end: "+=3500",
@@ -38,13 +39,16 @@ const Gallery = () => {
       ref={containerRef}
     >
       <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
+        One
+      </section>
+      <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
         <ProductOriginal />
       </section>
       <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
-        <Screen />
+        <ProductCherry />
       </section>
       <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
-        Three
+        Four
       </section>
     </div>
   );

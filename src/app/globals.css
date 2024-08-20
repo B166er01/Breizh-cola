@@ -21,6 +21,15 @@
     --mainColor: #450a0a;
     --secondColor: #fef2f2;
   }
+  .theme-cherry {
+    --mainColor: #fef2f2;
+    --secondColor: #721242;
+  }
+  .theme-stevia {
+    --mainColor: #fef2f2;
+    --secondColor: #789b2b;
+  }
+
 }
 
 *{

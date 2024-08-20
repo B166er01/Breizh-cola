@@ -1,38 +1,56 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function BottleCoca(props) {
   const bottleRef = useRef();
   const { nodes, materials } = useGLTF("/model/bottleCoca.glb");
+  const [hasAnimated, setHasAnimated] = useState(false);
 
-  useGSAP(() => {
-    if (bottleRef.current) {
-      gsap.to(bottleRef.current.position, {
-        x: 68,
-        scrollTrigger: {
-          trigger: "#blue",
-          start: "top 40%",
-        },
-        duration: 1.5,
-      });
+  useEffect(() => {
+    const bottle = bottleRef.current;
 
-      gsap.to(bottleRef.current.rotation, {
-        y: Math.PI,
-        scrollTrigger: {
-          trigger: "#blue",
-          start: "top 40%",
-        },
-        duration: 1.5,
+    const handleAnimation = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          // Animate the position and rotation of the bottle
+          gsap.to(bottle.position, {
+            x: 68,
+            duration: 1.5,
+            ease: "power4.out",
+          });
+
+          gsap.to(bottle.rotation, {
+            y: Math.PI,
+            duration: 1.5,
+            ease: "power4.out",
+          });
+
+          setHasAnimated(true); // Prevent the animation from running again
+        }
       });
+    };
+
+    // Create an Intersection Observer instance to observe the trigger element
+    const observer = new IntersectionObserver(handleAnimation, {
+      threshold: 0.9, // Adjust as needed
+    });
+
+    const triggerElement = document.getElementById("blue");
+
+    if (triggerElement) {
+      observer.observe(triggerElement);
     }
-  });
+
+    // Cleanup observer on component unmount
+    return () => {
+      if (triggerElement) {
+        observer.unobserve(triggerElement);
+      }
+    };
+  }, [hasAnimated]);
 
   return (
     <group

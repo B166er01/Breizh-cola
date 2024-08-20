@@ -3,9 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import MagneticButtons from "../MagneticButtons";
 import AnimatedLink from "../AnimatedLink";
-import BreizhCola from "../experience/views/BreizhCola";
 
-const ProductOriginal = () => {
+const ProductCherry = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -13,6 +12,7 @@ const ProductOriginal = () => {
   const ref5 = useRef(null);
   const ref6 = useRef(null);
   const ref7 = useRef(null);
+  const ref8 = useRef(null);
 
   const buttonRef = useRef(null);
   const screenRef = useRef(null);
@@ -35,6 +35,7 @@ const ProductOriginal = () => {
                 ref5.current,
                 ref6.current,
                 ref7.current,
+                ref8.current,
               ],
               {
                 y: 0,
@@ -64,8 +65,7 @@ const ProductOriginal = () => {
   }, [hasAnimated]);
 
   return (
-    <div id="blue" className="relative w-full h-screen" ref={screenRef}>
-      <BreizhCola />
+    <div id="purple" className="relative w-full h-screen" ref={screenRef}>
       <div
         className="relative scale-0 w-[440px] h-[220px] top-[50vh] left-1/2"
         ref={buttonRef}
@@ -80,41 +80,44 @@ const ProductOriginal = () => {
       <div className="flex flex-col gap-6 ml-20 uppercase font-poppins text-8xl">
         <p className="flex gap-8 overflow-hidden">
           <span ref={ref1} className="translate-y-full">
-            la recette
+            notes
           </span>
           <span
             ref={ref2}
             className="overflow-hidden transition-colors duration-500 translate-y-full text-stroke text-stroke-mainColor text-secondColor"
           >
-            originale
+            gourmande
+          </span>
+          <span ref={ref3} className="translate-y-full">
+            de
           </span>
         </p>
         <p className="flex gap-8 overflow-hidden">
           <span
-            ref={ref3}
+            ref={ref4}
             className="transition-colors duration-500 translate-y-full text-stroke text-stroke-mainColor text-secondColor"
           >
-            Son
+            cerises
           </span>
-          <span ref={ref4} className="overflow-hidden translate-y-full">
-            secret ?
+          <span ref={ref5} className="overflow-hidden translate-y-full">
+            griottes
           </span>
         </p>
         <p className="flex gap-8 mt-12 overflow-hidden text-7xl">
-          <span ref={ref5} className="translate-y-full">
-            le dosage
+          <span ref={ref6} className="translate-y-full">
+            et toujours
           </span>
           <span
-            ref={ref6}
+            ref={ref7}
             className="transition-colors duration-500 translate-y-full text-stroke text-stroke-mainColor text-secondColor"
           >
-            parfait
+            aussi
           </span>
         </p>
 
         <p className="flex gap-8 mt-12 overflow-hidden text-7xl">
-          <span ref={ref7} className="translate-y-full">
-            des ingredients
+          <span ref={ref8} className="translate-y-full">
+            rafraichissant
           </span>
         </p>
       </div>
@@ -122,4 +125,4 @@ const ProductOriginal = () => {
   );
 };
 
-export default ProductOriginal;
+export default ProductCherry;
