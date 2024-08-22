@@ -13,6 +13,7 @@ import Landing from "@/components/section/Landing";
 import Gallery from "@/components/section/Gallery";
 import SkewScroll from "@/components/section/SkewScroll";
 import Infos from "@/components/section/Infos";
+import Fun from "@/components/section/Fun";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -25,7 +26,7 @@ export default function Home() {
         className={`bg-secondColor text-mainColor  ${theme} transition-colors duration-500`}
       >
         <Landing />
-
+        <Infos />
         <Gallery />
         <Marquee />
         <Screen />

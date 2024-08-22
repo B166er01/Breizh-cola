@@ -35,7 +35,7 @@ const SkewScroll = () => {
   }, []);
 
   return (
-    <div className="flex justify-center w-full h-screen gap-72">
+    <div className="flex justify-center w-full h-screen gap-72 py-14">
       <div className="flex flex-col gap-32">
         <div className="skew-container w-[300px] h-[413px] col">
           <Image

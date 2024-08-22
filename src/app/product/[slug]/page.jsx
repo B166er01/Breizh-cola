@@ -87,12 +87,12 @@ const Page = ({ params }) => {
           <ProductTitle name={selectedProduct.name} />
           {ProductComponent && <ProductComponent />}
           <ProductDescription description={selectedProduct.description} />
+          <Marquee />
           <Ingredients
             ingredients={selectedProduct.ingredients}
             nutritionel={selectedProduct.nutritionel}
             formats={selectedProduct.format}
           />
-          <Marquee />
           <SkewScroll />
         </div>
       </div>

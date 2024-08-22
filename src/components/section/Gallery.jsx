@@ -8,6 +8,7 @@ import ProductOriginal from "./ProductOriginal";
 import Screen from "./Screen";
 import ProductCherry from "./ProductCherry";
 import Infos from "./Infos";
+import Fun from "./Fun";
 
 const Gallery = () => {
   const containerRef = useRef(null);
@@ -40,7 +41,7 @@ const Gallery = () => {
       ref={containerRef}
     >
       <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
-        <Infos />
+        <Fun />
       </section>
       <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
         <ProductOriginal />
