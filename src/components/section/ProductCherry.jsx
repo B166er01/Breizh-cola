@@ -76,7 +76,7 @@ const ProductCherry = () => {
       >
         <MagneticButtons>
           <button className=" -rotate-6 border-mainColor h-[220px] text-6xl uppercase rounded-[50%] cursor-pointer w-[440px] border font-bold hover:text-secondColor hover:bg-mainColor">
-            <AnimatedLink href="/product/original">decouvrez le</AnimatedLink>
+            <AnimatedLink href="/product/cherry">decouvrez le</AnimatedLink>
           </button>
         </MagneticButtons>
       </div>

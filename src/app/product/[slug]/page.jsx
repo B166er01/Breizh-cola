@@ -13,6 +13,8 @@ import SkewScroll from "@/components/section/SkewScroll";
 // Mapping slug to component import
 const componentMapping = {
   original: () => import("@/components/experience/views/BreizhOriginal"),
+  cherry: () => import("@/components/experience/views/BreizhOriginal"),
+
   // Add more mappings here for other slugs
 };
 
@@ -38,7 +40,7 @@ const products = [
     name: "cherry",
     color: "#fef2f2",
     description:
-      "La recette originale, créée en 2002. Son secret ? Un dosage parfait des ingrédients, lui donnant de fines bulles. Un gout plébiscité par les consommateurs depuis 20 ans !",
+      "Plus de 20 ans après la création du 1er cola régional de France, notre équipe d'irréductibles bretons s'est mise en tête de lancer LE cola qui manquait à notre gamme : Breizh Cola saveur cerise.",
     ingredients:
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame et acésulfame K.",
     nutritionel: {
@@ -82,10 +84,7 @@ const Page = ({ params }) => {
         className={`bg-secondColor ${theme} transition-colors duration-500 min-h-[200vh] w-full`}
       >
         <div id="single" className="w-full min-h-[200vh]">
-          <ProductTitle
-            name={selectedProduct.name}
-            color={selectedProduct.color}
-          />
+          <ProductTitle name={selectedProduct.name} />
           {ProductComponent && <ProductComponent />}
           <ProductDescription description={selectedProduct.description} />
           <Ingredients
