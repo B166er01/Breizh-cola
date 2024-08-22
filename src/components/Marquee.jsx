@@ -21,7 +21,7 @@ const Marquee = () => {
       }
 
       gsap.set([firstText.current, secondText.current], { xPercent: xPercent });
-      xPercent += 0.04 * direction;
+      xPercent += 0.1 * direction;
     }
 
     animationFrameId = requestAnimationFrame(animate);
@@ -59,7 +59,7 @@ const Marquee = () => {
 
   return (
     <div className="relative flex h-[28vh] w-full overflow-hidden bg-myWhite">
-      <div className="absolute z-10 -translate-x-3 top-2/4 border-y-2 border-skin-border border-mainColor text-myRed">
+      <div className="absolute z-10 -translate-x-3 bg-secondColor top-2/4 border-y-2 border-skin-border border-mainColor text-myRed">
         <div
           ref={slider}
           className="relative capitalize whitespace-nowrap text-9xl font-creamCake"

@@ -16,10 +16,12 @@
   :root {
     --mainColor: #450a0a;
     --secondColor: #fef2f2;
+    --cherryColor: #400824; /* Example cherry color */
   }
   .theme-reverse {
     --mainColor: #fef2f2;
     --secondColor: #450a0a;
+    --cherryColor: #400824; /* Example cherry color */
   }
   .theme-cherry {
     --mainColor: #fef2f2;

@@ -29,7 +29,6 @@ export default function Home() {
         <Gallery />
         <Marquee />
         <Screen />
-        <SkewScroll />
       </main>
     </>
   );
