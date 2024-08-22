@@ -43,7 +43,7 @@ const SkewScroll = () => {
             alt=""
             width={300}
             height={413}
-            layout="responsive"
+            // layout="responsive"
           />
         </div>
         <div className="mt-4 skew-container w-[300px] h-[413px] col">
@@ -52,7 +52,7 @@ const SkewScroll = () => {
             alt=""
             width={300}
             height={413}
-            layout="responsive"
+            // layout="responsive"
           />
         </div>
       </div>
@@ -64,7 +64,7 @@ const SkewScroll = () => {
             alt=""
             width={300}
             height={413}
-            layout="responsive"
+            // layout="responsive"
           />
         </div>
         <div className="mt-4 skew-container w-[300px] h-[413px] col">
@@ -73,7 +73,7 @@ const SkewScroll = () => {
             alt=""
             width={300}
             height={413}
-            layout="responsive"
+            // layout="responsive"
           />
         </div>
       </div>

@@ -14,8 +14,6 @@ const ThemeChanger = () => {
         setTheme("theme-reverse");
       } else if (scrollPositionY >= 3140 && scrollPositionY < 4220) {
         setTheme("theme-cherry");
-      } else if (scrollPositionY >= 4220 && scrollPositionY < 5300) {
-        setTheme("theme-stevia");
       } else {
         setTheme(""); // Default theme for other scroll positions
       }

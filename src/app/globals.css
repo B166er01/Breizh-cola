@@ -14,12 +14,12 @@
 
 @layer base {
   :root {
-    --mainColor: #fef2f2;
-    --secondColor: #450a0a;
-  }
-  .theme-reverse {
     --mainColor: #450a0a;
     --secondColor: #fef2f2;
+  }
+  .theme-reverse {
+    --mainColor: #fef2f2;
+    --secondColor: #450a0a;
   }
   .theme-cherry {
     --mainColor: #fef2f2;

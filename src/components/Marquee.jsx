@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
 
 const Marquee = () => {
   const firstText = useRef(null);
@@ -11,16 +10,32 @@ const Marquee = () => {
 
   let xPercent = 0;
   let direction = -1;
+  let animationFrameId = null; // Store the animation frame ID
 
-  useEffect(() => {
-    gsap.set(secondText.current, {
-      left: secondText.current.getBoundingClientRect().width,
-    });
-    requestAnimationFrame(animate);
-  }, []);
+  const animate = () => {
+    if (firstText.current && secondText.current) {
+      if (xPercent < -100) {
+        xPercent = 0;
+      } else if (xPercent > 0) {
+        xPercent = -100;
+      }
+
+      gsap.set([firstText.current, secondText.current], { xPercent: xPercent });
+      xPercent += 0.04 * direction;
+    }
+
+    animationFrameId = requestAnimationFrame(animate);
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    if (secondText.current) {
+      gsap.set(secondText.current, {
+        left: secondText.current.getBoundingClientRect().width,
+      });
+    }
+
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
@@ -31,21 +46,16 @@ const Marquee = () => {
         onUpdate: (e) => (direction = e.direction * 1),
       },
     });
-    requestAnimationFrame(animate);
+
+    animate();
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId); // Cancel the animation frame when unmounting
+      }
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
-
-  const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
-    }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-
-    requestAnimationFrame(animate);
-    xPercent += 0.04 * direction;
-  };
 
   return (
     <div className="relative flex h-[28vh] w-full overflow-hidden bg-myWhite">
@@ -54,13 +64,11 @@ const Marquee = () => {
           ref={slider}
           className="relative capitalize whitespace-nowrap text-9xl font-creamCake"
         >
-          <p className="relative pr-5 m-0 " ref={firstText}>
-            {" "}
+          <p className="relative pr-5 m-0" ref={firstText}>
             breizh cola - breizh cola - breizh cola - breizh cola - breizh cola
             - breizh cola -
           </p>
-          <p className="absolute top-0 left-[100%] m-0 pr-5 " ref={secondText}>
-            {" "}
+          <p className="absolute top-0 left-[100%] m-0 pr-5" ref={secondText}>
             breizh cola - breizh cola - breizh cola - breizh cola - breizh cola
             - breizh cola -
           </p>

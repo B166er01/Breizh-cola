@@ -8,7 +8,7 @@ const AnimateOut = () => {
     gsap.to(["#transition0", "#transition1", "#transition2", "#transition3"], {
       top: "-100%",
       duration: 0.44,
-      delay: 0.25,
+      delay: 0.35,
       stagger: 0.12,
     });
   }, []);

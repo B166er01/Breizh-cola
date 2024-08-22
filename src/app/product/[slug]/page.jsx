@@ -7,6 +7,7 @@ import ProductTitle from "@/components/ProductTittle";
 import Screen from "@/components/section/Screen";
 import ThemeChanger from "@/components/ThemeChanger";
 import { useTheme } from "@/components/ThemeProvider";
+import Ingredients from "@/components/section/Ingredients";
 
 const page = ({ params }) => {
   const { theme } = useTheme();
@@ -21,8 +22,9 @@ const page = ({ params }) => {
         <div id="single" className="w-full min-h-[200vh] ">
           <ProductTitle name={params.slug} />
           <BreizhOriginal />
+          <Screen />
         </div>
-
+        <Ingredients />
         <Screen />
       </div>
     </>
